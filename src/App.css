@@ -129,6 +129,10 @@ span.navbar-text {
     line-height: 1;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
+/* #githubicon  {
+  width: 500px;
+    height: 50px;
+} */
 .social-icon a::before {
     content: "";
     width: 42px;
@@ -288,12 +292,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 @keyframes updown {
     0% {
         transform: translateY(-20px);
+        opacity: 0;
     }
     50% {
         transform: translateY(20px);
+        opacity: 1;
     }
     100% {
         transform: translateY(-20px);
+        opacity: 0;
     }
 }
 .txt-rotate > .wrap {
@@ -615,4 +622,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+.item svg {
+  margin-bottom: 15px;
+}
+
+.item h5 {
+  text-align: center;
 }
