@@ -55,7 +55,7 @@ export const NavBar = () => {
                 <a href="#"><img src={navIcon1} alt="" /></a>
                 <a href="#"><img src={navIcon2} alt="" /></a>
                 <a href="#"><img src={navIcon3} alt="" /></a>
-                <a  id = "githubicon" href="#"><img src={navIcon4} alt="" /></a>
+                <a href="#"><img src={navIcon4} alt="" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
