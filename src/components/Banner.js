@@ -14,6 +14,7 @@ export const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer","Programmer"];
   const period = 2000;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     let ticker = setInterval(() => {
