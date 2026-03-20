@@ -11,18 +11,18 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
+  // const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer","Programmer"];
   const period = 2000;
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  let ticker = setInterval(() => {
+    tick();
+  }, delta);
 
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => { clearInterval(ticker) };
-  }, [text])
+  return () => clearInterval(ticker);
+}, []);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
