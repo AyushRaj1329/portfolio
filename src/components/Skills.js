@@ -76,7 +76,7 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-      <img className="background-image-left" src={colorSharp}  />
+      <img className="background-image-left" alt="React skill icon" src={colorSharp}  />
     </section>
   )
 }
