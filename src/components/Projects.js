@@ -38,7 +38,7 @@ export const Projects = () => {
       title: "OMP-Portfolio",
       description: "Design & Development",
       imgUrl: projImg3,
-      projurl: "https://github.com/AyushRaj1329/OMP-Portfolio-website/",
+      projurl: "https://www.omprakashassociates.com",
     },
 
   ];
