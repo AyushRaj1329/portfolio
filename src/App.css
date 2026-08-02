@@ -148,6 +148,8 @@ span.navbar-text {
 }
 .social-icon a img {
 	width: 40%;
+	height: 40%;
+	object-fit: contain;
 	z-index: 1;
 	transition: 0.3s ease-in-out;
 }
@@ -520,30 +522,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 14px 48px;
   font-size: 18px;
   margin-top: 25px;
-  border-radius: 0;
+  border: none;
+  border-radius: 30px;
   position: relative;
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .contact form button span {
   z-index: 1;
   position: relative;
 }
 .contact form button:hover {
-  color: #fff;
+  color: #E0C3FC;
+  background-color: #2A1B3D;
+  transform: translateY(-2px);
 }
-.contact form button::before {
-  content: "";
-  background: #121212;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.contact form button:hover::before {
-  width: 100%;
+.contact form button:focus-visible {
+  outline: 2px solid #E0C3FC;
+  outline-offset: 3px;
 }
 
 /************ Footer Css ************/
@@ -555,18 +550,199 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-repeat: no-repeat;
 }
 .newsletter-bx {
-  background: #FFFFFF;
+  background: black;
   border-radius: 55px;
-  color: #121212;
-  padding: 85px 125px;
+  color: #fff;
+  padding: 70px 70px;
   margin-bottom: 80px;
   margin-top: -122px;
+}
+@media (max-width: 767px) {
+  .newsletter-bx {
+    padding: 45px 25px;
+    border-radius: 35px;
+  }
 }
 .newsletter-bx h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
   line-height: 1.2em;
+  color: #fff;
+  font-size: 2.6rem;
+  text-align: center;
 }
+
+/*** Current Project Section ***/
+.current-project-intro {
+  color: #B8B8B8;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+.current-project-details {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.current-project-details:hover {
+  transform: translateY(-6px);
+  border-color: rgba(224, 195, 252, 0.4);
+}
+.project-status {
+  display: flex;
+  align-items: center;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.status-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.status-planning {
+  background: rgba(171, 71, 188, 0.18);
+  color: #ce93d8;
+}
+.status-development {
+  background: rgba(41, 182, 246, 0.15);
+  color: #29b6f6;
+}
+.status-testing {
+  background: rgba(0, 200, 83, 0.15);
+  color: #00c853;
+}
+.current-project-title {
+  color: #fff;
+  margin-top: 14px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.current-project-tech {
+  color: #E0C3FC;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+.current-project-desc {
+  color: #B8B8B8;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.current-project-link {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 18px;
+  color: #AA367C;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.current-project-link:hover {
+  color: #E0C3FC;
+}
+
+/*** Horizontal Scroll — Currently Working On ***/
+.projects-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.projects-scroll-container {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+/* Hide scrollbar on most browsers but keep it functional */
+.projects-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+.projects-scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+.projects-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(170, 54, 124, 0.6);
+  border-radius: 3px;
+}
+.projects-scroll-card {
+  /* Show 3 cards at a time with gaps */
+  flex: 0 0 calc((100% - 48px) / 3);
+  display: flex;
+}
+.projects-scroll-card .current-project-details {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .projects-scroll-card {
+    /* Show 2 cards on tablet */
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 575px) {
+  .projects-scroll-card {
+    /* Show 1.2 cards on mobile (peek at next) */
+    flex: 0 0 85%;
+  }
+}
+
+.scroll-arrow {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(170, 54, 124, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  line-height: 1;
+}
+.scroll-arrow:hover {
+  background: rgba(170, 54, 124, 0.35);
+  border-color: #AA367C;
+  transform: scale(1.1);
+}
+.scroll-arrow:active {
+  transform: scale(0.95);
+}
+@media (max-width: 575px) {
+  .scroll-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}
+
 .new-email-bx {
   background: #fff;
   padding: 5px;
